@@ -1,6 +1,7 @@
 import datetime as dt
 from .part import Part
 from .sheet import Sheet
+from .tui import BreatheApp
 
 
 def main():
@@ -9,14 +10,9 @@ def main():
     part2 = Part("Test2", dt.date.fromisoformat("2026-06-02"), 30)
     sheet.parts.append(part)
     sheet.parts.append(part2)
-    print(sheet)
 
-    # input_date = input("Enter the date (format: YYYY-MM-DD): ")
-    # date = dt.date.fromisoformat(input_date)
-    # input_name = input("Enter event Name: ")
-    # user_event = Part(input_name, date, 30)
-    #
-    # print(user_event)
+    app = BreatheApp(sheet)
+    app.run()
 
 
 if __name__ == "__main__":
