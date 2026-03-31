@@ -9,6 +9,10 @@ class Part:
         self.date = date
         self.interval = interval
         self.next_event = self.date + dt.timedelta(days=self.interval)
+        self.format = ("Name", "Date", "Interval", "Next Event")
 
     def __repr__(self) -> str:
         return f"Name: {self.name} Date: {format_date(self.date)} Interval: {self.interval} Next Event: {format_date(self.next_event)}"
+
+    def output(self) -> tuple:
+        return (self.name, self.date, self.interval, self.next_event)

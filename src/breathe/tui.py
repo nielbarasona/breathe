@@ -13,6 +13,5 @@ class BreatheApp(App):
 
     def on_mount(self) -> None:
         table = self.query_one(DataTable)
-        table.add_columns("Name", "Date")
-        for part in self.sheet.parts:
-            table.add_row(f"{part.name}", f"{part.date}")
+        table.add_columns(*self.sheet.parts[0].format)
+        table.add_rows(self.sheet.output())

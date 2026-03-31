@@ -13,3 +13,9 @@ class Sheet:
             return_string.append(f"{part}")
         return "\n".join(return_string)
         # return f" {self.name} Date: {format_date(self.date)} Interval: {self.interval} Next Event: {format_date(self.next_event)}"
+
+    def output(self) -> list:
+        output_list = []
+        for part in self.parts:
+            output_list.append(part.output())
+        return output_list
